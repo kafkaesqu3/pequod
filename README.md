@@ -104,52 +104,69 @@ python run.py --proxy https://xxxxxx.execute-api.us-east-1.amazonaws.com/firepro
 ## Dork files
 
 ###analysis.txt
+
 Domain analysis sites (urlscan, censys, etc)
 
 ###cloud.txt
+
 Cloud hosting sites
 
 ###developer.txt
+
 Code sharing, paste sites (pastebin, gists, etc)
 
 ###document-hosting.txt
+
 Sites that host documents
 
 ###documents.txt
+
 Document filetypes
 
 ###edu.txt
+
 Online trainings/universities
 
 ###file-storage.txt
+
 File storage websites
 
 ###filetype.txt
+
 Interesting filetypes
 
 ###forms.txt
+
 Forms, surveys, etc
 
 ###ghdb/
+
 Dorks from google hacking database
 
 ###linkedin-titles.txt
+
 Common job titles for tuning scrapes of Linkedin, Zoominfo, etc
 
 ###meetings.txt
+
 Conferecing/meeting URLs
 
 ###orgs.txt
+
 Dorks to uncover information about an organization
 
 ###other.txt
+
 Misc
 
 ###shorteners.txt
+
 URL shorteners
 
 ##social.txt
+
 Social media sites
 
 ###trello.txt
+
 Trello boards

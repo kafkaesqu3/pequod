@@ -25,7 +25,7 @@ site:ghostbin.co/paste
 site:ghostbin.com
 site:gist.github.com
 site:git.io
-site:github.com
+site:github.com -site:gist.github.com
 site:github.io
 site:githubusercontent.com
 site:gitlab.com

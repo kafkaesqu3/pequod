@@ -35,9 +35,9 @@ def runQuery(query):
         # build query
         URL = f"https://google.com/search?q={urllib.parse.quote(query)}&start={page}0"
         if "execute-api" in proxy: # replace URL with API gateway endpoint
-            URL = f"{proxy}search?q={urllib.parse.quote(query)}&start={page}0?filter=0"
+            URL = f"{proxy}search?q={urllib.parse.quote(query)}&start={page}0&filter=0"
         else: 
-            URL = f"https://google.com/search?q={urllib.parse.quote(query)}&start={page}0?filter=0"
+            URL = f"https://google.com/search?q={urllib.parse.quote(query)}&start={page}0&filter=0"
         if args.debug: 
             debug_string = f"[-] DEBUG -- QUERY: {query} URL: {URL}"
             handleOutput(debug_string, None)
@@ -83,8 +83,8 @@ def runQuery(query):
                 if "did not match any documents" in noresults2.get_text():
                     return
             page_results = soup.find_all(class_='g')
-            if len(page_results) == 0: 
-                # no results, we're done with the query
+            if len(page_results) < 10: 
+                # not a full page of results, we're done with the query
                 return
             # foreach result (10 per page)
             for g in page_results:
@@ -157,7 +157,7 @@ def runQueriesThread(query_list):
 # desktop user-agent
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:64.0) Gecko/20100101 Firefox/65.0"
 
-parser = argparse.ArgumentParser(description='White whale, holy grail...\nGoogle dorking script w/ support for proxies/AWS API gateway endpoint', formatter_class=argparse.RawTextHelpFormatter)
+parser = argparse.ArgumentParser(description='White whale, holy grail\nScalable Google dorking script w/ support for proxies/AWS API gateway endpoint', formatter_class=argparse.RawTextHelpFormatter)
 parser.add_argument('--proxy', 
                     help='(rotating) proxy string or AWS API gateway', required=True)
 parser.add_argument('-t', '--target', 
@@ -169,7 +169,7 @@ parser.add_argument('-o', '--operator',
 parser.add_argument('--dorkfile', 
                     help='file w/ list of dorks', required=True)
 parser.add_argument('--pages', 
-                    help='page search depth', type=int, default=1, required=False)                    
+                    help='page search depth', type=int, default=10, required=False)                    
 parser.add_argument('--start', 
                     help='start at page (0=first page)', type=int, default=0, required=False)                    
 parser.add_argument('--threads', 
