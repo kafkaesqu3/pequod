@@ -1,0 +1,6 @@
+site:azorus.com 
+site:blackboard.com 
+site:coursera.org/account/accomplishments 
+site:instructure.com 
+site:topuniversities.com 
+site:youracclaim.com/badges 

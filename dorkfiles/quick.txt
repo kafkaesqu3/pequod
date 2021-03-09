@@ -1,0 +1,25 @@
+site:http://codepad.co 
+site:http://scribd.com 
+site:http://npmjs.com 
+site:http://npm.runkit.com 
+site:http://libraries.io 
+site:http://ycombinator.com 
+site:http://coggle.it 
+site:http://papaly.com 
+site:http://google.com 
+site:http://trello.com 
+site:http://prezi.com 
+site:http://jsdelivr.net 
+site:http://codepen.io 
+site:http://codeshare.io 
+site:http://sharecode.io 
+site:http://pastebin.com 
+site:http://repl.it 
+site:http://productforums.google.com 
+site:http://gitter.im 
+site:http://bitbucket.org 
+site:*.atlassian.net 
+atlassian.net 
+inurl:gitlab 
+inurl:jira AND intitle:login
+inurl:confluence AND intitle:login

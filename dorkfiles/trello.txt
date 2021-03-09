@@ -1,0 +1,9 @@
+site:trello.com password + admin OR username
+site:trello.com intext:@gmail.com 
+site:trello.com intext:accesskey 
+site:trello.com intext:sql intext:sa 
+site:trello.com intext:postgresql intext:root 
+site:trello.com intext:BEGIN RSA PRIVATE KEY
+inurl:https://trello.com AND intext:@gmail.com AND intext:password
+inurl:https://trello.com AND intext:ftp AND intext:password
+inurl:https://trello.com AND intext:ssh AND intext:password

@@ -1,0 +1,12 @@
+site:123formbuilder.com 
+site:formdesk.com 
+site:form.jotform.com 
+site:formlets.com 
+site:forms.gle 
+site:forms.office.com 
+site:formsite.com 
+site:formstack.com/forms 
+site:jotform.com 
+site:qualtrics.com 
+site:surveymonkey.com 
+site:typeform.com 

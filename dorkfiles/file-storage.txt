@@ -1,0 +1,9 @@
+site:1drv.ms 
+site:box.net/shared 
+site:dropbox.com/s 
+site:gofile.io 
+site:mega.nz 
+site:wesendit.com/dl 
+site:wetransfer.com 
+site:yadi.sk 
+site:zippyshare.com 
