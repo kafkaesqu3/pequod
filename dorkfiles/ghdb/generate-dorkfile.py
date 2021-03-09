@@ -16,10 +16,6 @@ for category in categories:
     rows = c.fetchall()
     for row in rows:
         f.write((str(row)[2:-3]) + '\n')
-    print("{}: {} entries".format(category_filename, len(rows)))
+    print("ghdb-{}.txt: {} entries".format(category_filename, len(rows)))
 
 conn.close()
-
-
-
-

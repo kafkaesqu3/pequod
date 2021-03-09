@@ -1,3 +1,6 @@
+inurl:confluence AND intitle:login
+inurl:jira AND intitle:login
+site:*.atlassian.net
 site:atlassian.net
 site:bitbucket.org
 site:ci.appveyor.com
