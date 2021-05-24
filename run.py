@@ -83,9 +83,7 @@ def runQuery(query):
                 if "did not match any documents" in noresults2.get_text():
                     return
             page_results = soup.find_all(class_='g')
-            if len(page_results) < 10: 
-                # not a full page of results, we're done with the query
-                return
+
             # foreach result (10 per page)
             for g in page_results:
                 anchors = g.find_all('a')
@@ -130,6 +128,9 @@ def runQuery(query):
                     log_string = f"{result.get('title')} : {result.get('link')}\n"
                 handleOutput(stdout_string, log_string)
             page+=1
+            if len(page_results) < 10: 
+                # not a full page of results, we're done with the query
+                return
         else: 
             raise RuntimeError("Blocked by google: {}".format(resp.status_code))
     return
