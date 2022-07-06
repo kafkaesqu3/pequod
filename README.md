@@ -1,9 +1,14 @@
 ## Fireprox
 Step 1: Fireprox to set up AWS API gateway endpoint (https://github.com/ustayready/fireprox): 
 
+Google: 
 ```
 python fire.py --access_key ZZZZZ --secret_access_key XXXXXXXXX --region us-east-1 --command create --url https://www.google.com
 ```
+
+Pass the endpoint created to the --proxy field
+
+# Use case examples
 
 ## Employee scraping: 
 ```
@@ -27,6 +32,7 @@ site:zoominfo.com/p/ developer intitle:"companyname" Employee Profiles
 site:zoominfo.com/p/ devops intitle:"companyname" Employee Profiles
 ```
 
+Instead of rewriting dorkfiles to match the target, use --target to specify a company name/company domain, and --operator to specify, as seen below: 
 
 ## Search developer/paste sites for information leaks
 
@@ -36,7 +42,7 @@ python run.py --proxy https://xxxxxx.execute-api.us-east-1.amazonaws.com/firepro
 
 ## Scrape documents directly from a list of sites: 
 ```
-python run.py --proxy https://xxxxxx.execute-api.us-east-1.amazonaws.com/fireprox/ --target-file sitelist.txt --target-operator site --dorkfile dorkfiles/documents-dorkfile.txt --out document-results.txt --pages 12
+python run.py --proxy https://xxxxxx.execute-api.us-east-1.amazonaws.com/fireprox/ --target-file sitelist.txt --operator site --dorkfile dorkfiles/documents-dorkfile.txt --out document-results.txt --pages 12
 ```
 
 ## Subdomain scraping
