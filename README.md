@@ -1,3 +1,10 @@
+## Command line flags
+`--target`/`--target-file`: These contain a list of domain names or keywords (such as company name) we want to search for
+`--operator`: This is the search operator we want to use, applied to the target/target list
+`--dorkfile`: The base list of dorks
+
+Combine these flags to create the dork list for the program to execute
+
 ## Fireprox
 Step 1: Fireprox to set up AWS API gateway endpoint (https://github.com/ustayready/fireprox): 
 
@@ -37,12 +44,18 @@ Instead of rewriting dorkfiles to match the target, use --target to specify a co
 ## Search developer/paste sites for information leaks
 
 ```
-python run.py --proxy https://xxxxxx.execute-api.us-east-1.amazonaws.com/fireprox/ --target companyname.com --target-operator intext --dorkfile dorkfiles/dev.txt --out devdorks-results.txt --pages 12
+python run.py --proxy https://xxxxxx.execute-api.us-east-1.amazonaws.com/fireprox/ --target companyname.com -o intext --dorkfile dorkfiles/dev.txt --out devdorks-results.txt --pages 12
+```
+
+## Scrape documents from target set
+```
+python run.py --proxy https://xxxxxx.execute-api.us-east-1.amazonaws.com/fireprox/ --dorkfile dorkfiles/documents.txt --target-file domains.txt --operator site --out documents.txt --pages 15
 ```
 
 ## Scrape documents directly from a list of sites: 
+Scrape document hosting sites (from document-hosting.txt dorkfile) for references contained in sitelist.txt
 ```
-python run.py --proxy https://xxxxxx.execute-api.us-east-1.amazonaws.com/fireprox/ --target-file sitelist.txt --operator site --dorkfile dorkfiles/documents-dorkfile.txt --out document-results.txt --pages 12
+python run.py --proxy https://xxxxxx.execute-api.us-east-1.amazonaws.com/fireprox/ --target-file sitelist.txt --operator site --dorkfile dorkfiles/document-hosting.txt  --out hosted-document-results.txt --pages 12
 ```
 
 ## Subdomain scraping

@@ -13,6 +13,13 @@ import re
 import time
 import threading
 
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.keys import Keys
+
 import inspect
 #global lock object for handling output
 lock = threading.Lock()
@@ -82,6 +89,9 @@ def runQuery(query):
             if noresults2: 
                 if "did not match any documents" in noresults2.get_text():
                     return
+            # extract search results
+            search_results = soup.find('div', id='search')
+
             page_results = soup.find_all(class_='g')
 
             # foreach result (10 per page)
