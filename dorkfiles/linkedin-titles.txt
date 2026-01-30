@@ -31,6 +31,7 @@ financial
 helpdesk
 hr
 human
+intern
 it
 junior
 lead
